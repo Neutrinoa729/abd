@@ -1,0 +1,1203 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" contents="always">
+<meta property="og:title" content="네이버페이">
+<meta property="og:image" content="https://img.pay.naver.net/static/images/customer/og/naverpay.png">
+<meta property="og:description" content="네이버 ID로 간편구매, 네이버페이">
+<title>네이버페이</title>
+<link rel="shortcut icon" href="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="https://ssl.pstatic.net/static.checkout/layout/202111111406/css/customer/chk_n_common.css">
+<link type="text/css" rel="stylesheet" href="//img.pay.naver.net/o/wstatic/css/service/front/order/chk_n_content.css?1638438877896">
+<link type="text/css" rel="stylesheet" href="//img.pay.naver.net/o/wstatic/css/service/front/order/chk_content.css?1638438877896">
+<link type="text/css" rel="stylesheet" href="//img.pay.naver.net/o/wstatic/css/component/uio_calendar.css?1638438877896">
+<link type="text/css" rel="stylesheet" href="//img.pay.naver.net/o/wstatic/css/component/datepicker.css?1638438877896">
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+	document.domain = "naver.com";
+</script>
+</head>
+<body>
+    <div id="wrap">
+
+    <!-- u_skip -->
+    <div id="u_skip">
+    </div>
+    <!-- //u_skip -->
+
+    <!-- header -->
+    <div id="header">
+	    <div class="hd_inner">
+		<script type="text/javascript">
+			var nsc="checkout.all";
+			var gnb_service="checkout";
+			var gnb_template="gnb_utf8";
+			var gnb_logout=encodeURIComponent("https://pay.naver.com/about");
+			var gnb_brightness=2;
+			var gnb_item_hide_option=0;
+		</script>
+		<div class="gnb_sc">
+			<div class="site">
+				<dl>
+				<dt class="blind">패밀리사이트</dt>
+				<dd>
+					<a href="https://www.naver.com/" class="s_link1"><span>NAVER</span></a><!--N=a:GNB.naver-->
+					<a href="http://shopping.naver.com" class="s_link2"><span>네이버쇼핑</span></a><!--N=a:GNB.shopping-->
+				</dd>
+				</dl>
+			</div>
+			<div class="chkout_gnb_wrap">
+				<dl class="link">
+				<dt class="blind">네이버페이링크</dt>
+				<dd>
+					<a href="https://shopping.naver.com/cart">
+						<span class="icon_cart"></span>장바구니
+					</a><!--N=a:GNB.cart-->
+				</dd>
+				</dl>
+				<!-- GNB -->
+				<div id="gnb">
+				</div>
+				<script type="text/javascript" charset="utf-8" src="https://static.nid.naver.com/template/gnb_utf8.nhn?2021120218"></script>
+				<!-- //GNB -->
+			</div>
+		</div>
+<!--    소개     -->
+<!--  마이페이지 -->
+
+<!--  결제내역  -->
+<!--  포인트  -->
+<!--  송금    -->
+<!--  선물함    -->
+<!--  판매·정산  -->
+<!-- 이벤트·쿠폰 -->
+<!-- 문의·리뷰 -->
+
+
+		<div class="lnb_sc">
+			<h1 class="sta">
+				<a href="https://pay.naver.com" class="logo_naver"><span>N</span></a><!--N=a:LNB.pay-->
+				<a href="https://pay.naver.com" class="logo_chkout"><span>Pay</span></a><!--N=a:LNB.pay-->
+			</h1>
+			<div class="lnb">
+				<ul>
+				<li><a href="https://order.pay.naver.com/home" class="menu1"><span>결제내역</span></a><!--N=a:LNB.order--></li>
+				<li><a href="https://order.pay.naver.com/home?tabMenu=POINT_TOTAL" class="menu2"><span>포인트</span></a><!--N=a:LNB.point--></li>
+				<li><a href="https://pay.naver.com/send/p/list/s" class="menu3"><span>송금</span></a><!--N=a:LNB.send--></li>
+				<li><a href="https://pay.naver.com/mygift/d" class="menu8"><span>선물함</span></a><!--N=a:LNB.gift--></li>
+				<li><a href="https://event2.pay.naver.com/event/benefit/list" class="menu5"><span>이벤트·쿠폰</span></a><!--N=a:LNB.event--></li>
+				<li><a href="https://pay.naver.com/shoppingInquiry/inquiryList" class="menu6"><span>문의·리뷰</span></a><!--N=a:LNB
+				.review--></li>
+				</ul>
+			</div>
+		</div>		
+	
+	    </div>
+    </div> 
+    <!-- //header -->
+
+    <!-- container -->
+    <div id="container">
+    	<!-- t_sction -->
+    	<div class="t_sction">
+<div class="snb">
+    <!-- [D] 로그인 화면 -->
+            <div class="member_sc">
+                <h2 class="blind">내정보</h2>
+                <div class="profile_area ">
+                    <div class="profile_img_wrapper">
+                        <div class="profile_img">
+                            <span class="mask"></span>
+                        </div>
+                    </div>
+                    <!-- [D] 네이버플러스 멤버십 가입시 노출 -->
+                    <div class="profile_txt">
+                        <span class="name">mmerii님</span>
+                    </div>
+                </div>
+                <dl class="my_npoint">
+                    <dt>네이버페이 포인트</dt>
+                    <dd><a href="https://order.pay.naver.com/home?tabMenu=POINT_TOTAL" class="link"><strong>0</strong>원</a></dd>
+                </dl>
+                <div class="charge_area">
+                    <a href="javascript: var chgWin=window.open('https://pay.naver.com/npoint/pay/charge.naver?CHNL=NV&RURL='+encodeURIComponent('https://pay.naver.com/common/rurl/openerReloadAndClose'), 'chargePay', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=500,height=730')"
+                       class="button_charge">충전</a><!--N=a:lpr.pointcharge--><a
+                            href="javascript: var chgWin=window.open('https://pay.naver.com/point/pointgift/front/form', 'pointGift', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=450,height=705')"
+                            class="button_charge">선물</a><!--N=a:lpr.pointgift-->
+                </div>
+            </div>
+                <div class="membership_sc">
+                    <a href="https://nid.naver.com/membership/join" target="_blank" class="membership_link">
+                        <p><span class="ico_npmember_snb"><span class="blind">네이버플러스 멤버십</span></span> <b>지금 가입하고</b> <span class="text_small"><em class="point_green">최대 <span
+                                            class="per">4%</span></em> 더 받으세요!</span></p>
+                        <span class="membership_arrow">자세히 보기</span>
+                    </a>
+                </div>
+            <!-- 쇼핑MY -->
+            <div class="shopping_sc">
+                <strong class="sc_title">쇼핑MY</strong>
+                <ul class="list_link">
+                    <li><a href="https://shopping.naver.com/my/writable-reviews" target="_blank" class="link_my">작성 가능한 리뷰</a><!--N=a:lmy.writereview--></li>
+                    <li><a href="https://shopping.naver.com/my/keep-products" target="_blank" class="link_my">내가 찜한 상품</a><!--N=a:lmy.zzim--></li>
+                    <li><a href="https://shopping.naver.com/my/subscriptions" target="_blank" class="link_my">정기구독<span class="text_new">NEW</span></a><!--N=a:lmy.reghome--></li>
+                </ul>
+            </div>
+
+            <!-- paylater TODO -->
+
+            <div class="my_setting_sc">
+                <ul class="set_group">
+                    <li class="set_item"><a href="https://pay.naver.com/mypage/update" class="set_link ico_setup">기본설정</a><!--N=a:lpr.setting--></li>
+                    <li class="set_item"><a href="https://pay.naver.com/mypage/update#set6" class="set_link ico_noti">알림수신 설정</a><!--N=a:lpr.noti--></li>
+                    <li class="set_item"><a href="https://pay.naver.com/mypage/update#set1" class="set_link ico_card">카드/계좌관리</a><!--N=a:lpr.cardAccount--></li>
+                    <li class="set_item"><a href="https://pay.naver.com/mypage/update#set3" class="set_link ico_security">보안/인증</a><!--N=a:lpr.password--></li>
+                    <li class="set_item"><a href="https://pay.naver.com/shipping/list" class="set_link ico_ship">배송지 관리</a><!--N=a:lpr.address--></li>
+                    <li class="set_item"><a href="https://pay.naver.com/mypage/update#set8" class="set_link ico_recur">정기/예약결제</a></li>
+                </ul>
+            </div>
+    <!-- [D] 로그인 전 화면 -->
+    <div class="s_sc">
+        <h2 class="ent">이벤트</h2>
+        <div id="rolling1" class="rolling">
+                <ul>
+                        <li><a href="https://campaign.naver.com/event/npay-samsung_direct3_2103" target="_blank"><img src="https://phinf.pstatic.net/checkout/20211018_267/1634534216952YUV9k_PNG/210.png" width="210" height="200" alt="삼성화재 2107"></a><!--N=a:lev.banner--></li>
+                        <li><a href="https://m-campaign.naver.com/collect/v2/?code=2021061102_210004_005_200102&target=http://naver.me/5MU6V7fT" target="_blank"><img src="https://phinf.pstatic.net/checkout/20210226_297/16143271032117iieP_PNG/image.PNG" width="210" height="200" alt="치트키2102"></a><!--N=a:lev.banner--></li>
+                        <li><a href="https://m-campaign.naver.com/collect/v2/?code=2021061102_210004_001_200102&target=https://campaign.naver.com/event/pointpay" target="_blank"><img src="https://phinf.pstatic.net/checkout/20210226_244/161432707156225VOY_PNG/UP.png" width="210" height="200" alt="충전결제2102"></a><!--N=a:lev.banner--></li>
+                </ul>
+        </div>
+        <div class="more">
+            <a href="#" class="prev _prev_btn">이전</a><!--N=a:lev.prev-->
+            <a href="#" class="next _next_btn">다음</a><!--N=a:lev.next-->
+        </div>
+    </div>
+
+    <div class="s_sc">
+        <h2 class="use">사용처</h2>
+        <div class="inner">
+            <ul class="use_list">
+                <li>
+                    <a href="https://pay.naver.com/introduction/merchant/list?searchTapType=merchant" title="쇼핑몰보기">
+                        <dl>
+                            <dt>쇼핑</dt>
+                            <dd>523,644</dd>
+                        </dl>
+                    </a><!--N=a:lmr.shopping-->
+                </li>
+                <li>
+                    <a href="https://pay.naver.com/introduction/merchant/list?searchTapType=digital" title="디지털콘텐츠보기">
+                        <dl>
+                            <dt>디지털콘텐츠</dt>
+                            <dd>17</dd>
+                        </dl>
+                    </a><!--N=a:lmr.digital-->
+                </li>
+                <li>
+                    <a href="https://search.naver.com/search.naver?ie=UTF-8&sm=whl_hty&query=네이버페이+QR결제" title="QR결제보기">
+                        <dl>
+                            <dt>QR결제</dt>
+                            <dd>1,378,318</dd>
+                        </dl>
+                    </a><!--N=a:lmr.qrpay-->
+                </li>
+                <li>
+                    <a href="https://pay.naver.com/introduction/merchant/list?searchTapType=reservation" title="예약처보기">
+                        <dl>
+                            <dt>예약</dt>
+                            <dd>138,352</dd>
+                        </dl>
+                    </a><!--N=a:lmr.reservation-->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="s_sc">
+        <h2 class="alliance">제휴사</h2>
+        <div class="inner">
+            <div class="all_lst">
+                <h3 class="blind">카드 제휴사</h3>
+                <ul>
+
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_kb_70_22.png" width="70" height="22" alt="국민카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_lotte_70_22.png" width="70" height="22" alt="롯데카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bc_70_22.png" width="70" height="22" alt="비씨카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_samsung_70_22.png" width="70" height="22" alt="삼성카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_sinhan_70_22.png" width="70" height="22" alt="신한카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_hana_70_22.png" width="70" height="22" alt="하나카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_hyundai_70_22.png" width="70" height="22" alt="현대카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_nhcard_70_22.png" width="70" height="22" alt="NH농협카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_citi_70_22.png" width="70" height="22" alt="씨티카드"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_kakao_70_22.png" width="70" height="22" alt="카카오뱅크"></li>
+                </ul>
+            </div>
+            <div class="all_lst">
+                <h3 class="blind">은행 제휴사</h3>
+                <ul>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_kbbank_70_22.png" width="70" height="22" alt="국민은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_ibk_70_22.png" width="70" height="22" alt="기업은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_nh_70_22.png" width="70" height="22" alt="농협은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_sinhanbank_70_22.png" width="70" height="22" alt="신한은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_citi_70_22.png" width="70" height="22" alt="한국씨티은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_standardchartered_70_22.png" width="70" height="22" alt="SC은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_woori_70_22.png" width="70" height="22" alt="우리은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_090_70_22.png" width="70" height="22" alt="카카오뱅크"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_089_70_22.png" width="70" height="22" alt="케이뱅크"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_toss_70_22.png" width="70" height="22" alt="토스뱅크"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_081_70_22.png" width="70" height="22" alt="하나은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_kyeongnam_70_22.png" width="70" height="22" alt="경남은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_034_70_22.png" width="70" height="22" alt="광주은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_031_70_22.png" width="70" height="22" alt="대구은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_busan_70_22.png" width="70" height="22" alt="부산은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_002_70_22.png" width="70" height="22" alt="KDB산업은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_suhyup_70_22.png" width="70" height="22" alt="수협은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_post_70_22.png" width="70" height="22" alt="우체국"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_037_70_22.png" width="70" height="22" alt="전북은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_035_70_22.png" width="70" height="22" alt="제주은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_045_70_22.png" width="70" height="22" alt="새마을금고"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_048_70_22.png" width="70" height="22" alt="신협"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_103_70_22.png" width="70" height="22" alt="SBI저축은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_050_70_22.png" width="70" height="22" alt="저축은행"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_238_70_22.png" width="70" height="22" alt="미래에셋증권"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_240_70_22.png" width="70" height="22" alt="삼성증권"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_shinhaninvest_70_22.png" width="70" height="22" alt="신한금융투자"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_266_70_22.png" width="70" height="22" alt="SK증권"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_yuanta_70_22.png" width="70" height="22" alt="유안타증권"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_eugene_70_22.png" width="70" height="22" alt="유진투자증권"></li>
+                    <li><img src="https://ssl.pstatic.net/static.checkout/layout/202111111406/images/customer/bi_bank_243_70_22.png" width="70" height="22" alt="한국투자증권"></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+	        <!-- content -->
+	        <div id="content" class="subpg _root">
+	        	<div class="sub_sc2" style="min-height:1204px;">
+
+<link type="text/css" rel="stylesheet" href="//img.pay.naver.net/o/wstatic/css/service/front/order/layerpopup.css?1638438877896">
+
+
+
+<div class="heading heading3">
+	<h3 class="text">		주문 상세정보
+</h3>
+</div>
+<!-- 결제 대기중 -->
+<!-- 결제 실패 -->
+<div class="bx bx_padding vsb">
+	<ul class="fl order_info2">
+	<li class="first">
+		<dl>
+		<dt>주문일자</dt>
+		<dd><strong>2021.11.28</strong></dd>
+		</dl>
+	</li>
+	<li>
+		<dl>
+		<dt>주문번호</dt>
+		 <dd class="ordnum"><strong class="pointcol">2021110932809401</strong>
+			 	<a href="#" class="order_del _click(nmp.front.order.order_status.order_detail.hideOrderList(2021110932809401,true)) _stopDefault"><span class="blind">내역삭제</span></a>
+             <!--N=a:odd.delete-->
+				<a href="#" class="btn_rebuy _rebuy2021110932809401 _click(nmp.front.order.order_status.repurchaseOpenByOrderNo(2021110932809401)) _stopDefault"><span class="blind">재구매</span></a>
+			<!--N=a:odd.reball-->
+		 </dd>
+		</dl>
+	</li>
+	
+	</ul>
+		<div class="btn_area fr mgr">
+			  <a href="#" target="_blank" class="receipt _click(nmp.front.order.order_status.order_detail.openReceipt(2021110932809401)) _stopDefault"><span class="blind">영수증 발급내역</span></a><!--N=a:odd.receiptlst-->
+		</div>
+</div>
+
+
+
+<table cellspacing="0" border="1" class="tb_list mgt">
+<caption>주문내역</caption>
+<col width="110"><col width=""><col width="97"><col width="99"><col width="90"><col width="108">
+<thead>
+	<tr>
+	<th scope="col"><strong>상품주문번호</strong></th>
+	<th scope="col">상품정보</th>
+	<th scope="col">상품금액(수량)</th>
+	<th scope="col" class="bg_point">배송비/판매자</th>
+	<th scope="col" colspan="2" class="bg_point">진행상태</th>
+	</tr>
+</thead>
+<tbody>
+	<tr class="group">
+	<td>
+		<span class="thm ordernum2">2021110984832221</span>
+	</td>
+	<td class="product">
+<div>
+<div class="thmb">
+<div class="img_center"><a href="https://inflow.pay.naver.com/rd?no=510235957&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F5194180623&vcode=XxPO5lS4ASFkMkMZDYRwM%2BmF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNlpyV2nHAoQoIuIKTSPnjCHo4%2Br4Wbafm9zEaGdv2zY2" target="_blank" ><img src="https://order.pay.naver.com/proxy/phinf/shop1/20210927_169/16326756835832KnoC_PNG/33811529287992011_1050988284.png?type=m80" alt="옥스포드 포켓절취 스프링노트 좌철 합지 A4 B5 낱권"></a><!--N=a:odd.product--></div>
+</div>
+<dl><!-- NV_MID:82738701955 -->
+<dt>
+<div class="additional_status">
+<span class="ico_npmember type_npay small"><span class="blind">네이버플러스 멤버십</span></span>
+</div>
+<strong class="name_seller">[스마트스토어] 짱구네문구</strong>
+<a href="https://inflow.pay.naver.com/rd?no=510235957&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F5194180623&vcode=XxPO5lS4ASFkMkMZDYRwM%2BmF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNlpyV2nHAoQoIuIKTSPnjCHo4%2Br4Wbafm9zEaGdv2zY2" target="_blank" >
+옥스포드 포켓절취 스프링노트 좌철 합지 A4 B5 낱권
+</a><!--N=a:odd.product-->
+</dt>
+<dd>규격: A4
+(+500원)
+</dd>
+</dl>
+</div>                <div class="rebuy _repurchase2021110984832221">
+                        <a href="#" class="fold _click(nmp.front.order.order_status.repurchaseOpen(2021110984832221)) _stopDefault">재구매</a><!--N=a:odd.rebuy-->
+                </div>
+	</td>
+	<td class="money">
+		<em class="thm">37,000</em>원<br>
+			<span>(10개)</span>
+	</td>
+	<td class="seller bg_point" rowspan="1">
+		<div class="send">
+			<div class="sum"><em class="thm">3,000</em>원 <a href="#" target="_blank" class="btn_help _click(nmp.front.order.order_status.openDeliveryFee(2021110984832221)) _stopDefault"><span class="blind">배송비 상세내역</span></a><!--N=a:odd.deldetail--></div>
+			<div class="_layer_deliveryFee ly_type" style="max-width:200px;display:none;z-index: 100">
+				<div class="ly_cont">
+					
+				</div>
+				<a href="#" class="clse _click(nmp.layer.hide()) _stopDefault"><span class="blind">닫기</span></a>
+				<div class="edge_cen"></div>
+			</div>
+			<div class="store">
+				<div class="inner ">
+					<div class="txt_elp">
+						<p>
+									<a href="#" class="_click(nmp.front.order.layer.merchant.infoPopup(ncp_1no6x9_01,MP)) _stopDefault">짱구네문구</a>
+                                <!--N=a:odd.seller-->
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tel">
+				<span>(02-457-3207)</span>
+			</div>
+			<div class="btn">
+			<a href="#" class="seller_inquiry _click(nmp.front.order.order_status.userAction(SHOPPING_INQUIRY,ajax,/merchant/shoppingInquiry/2021110984832221)) _stopDefault"><span class="blind">문의하기</span></a>
+                                    <!--N=a:odd.inquiry-->
+						<a href="" class="talk_inquiry _click(nmp.front.order.order_status.order_detail.openTalkTalk(2021110932809401,510235957,2021110984832221)) _stopDefault"><span class="blind">톡톡 하기</span></a><!--N=a:odd.talktalk-->
+			</div>
+		</div>
+	</td>
+	<td class="bg_point state">
+		구매확정<br/>
+	</td>
+	<td class="bg_point btn">
+				<a href="#" class="review_write _click(nmp.front.order.order_status.userAction(REVIEW_WRITE,popup,https://shopping.naver.com/reviews/form?orderNo=2021110932809401&productOrderNos=2021110984832221&returnUrl=https://order.pay.naver.com/review/formCallback)) _stopDefault">
+					<span class="blind">리뷰쓰기</span>
+				</a>
+                <!--N=a:odd.review-->
+				<a href="#" class="deliver _click(nmp.front.order.order_status.userAction(DELIVERY_INQUIRY,popup,/o/orderStatus/deliveryTracking/2021110984832221/ORDER_DELIVERY/api)) _stopDefault">
+					<span class="blind">배송조회</span>
+				</a>
+                <!--N=a:odd.tracking-->
+	</td>
+	</tr>
+	<tr >
+	<td>
+		<span class="thm ordernum2">2021110984832211</span>
+	</td>
+	<td class="product">
+<div>
+<div class="thmb">
+<div class="img_center"><a href="https://inflow.pay.naver.com/rd?no=500108564&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F2107300097&vcode=e%2B92H7LuBBv%2FTHnRvLPlAemF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNoXuMnyuDt6kejmCV93vvUrxX%2FmIbTO%2FHop9nO5N7GFW" target="_blank" ><img src="https://order.pay.naver.com/proxy/phinf/shop1/20210923_209/1632367023224bts4u_JPEG/33502865923471844_1321370089.jpg?type=m80" alt="현대 멀티탭 1구 2구 3구 4구 5구 6구 개별 스위치 멀티콘센트"></a><!--N=a:odd.product--></div>
+</div>
+<dl><!-- NV_MID:12017728899 -->
+<dt>
+<div class="additional_status">
+<span class="ico_npmember type_npay small"><span class="blind">네이버플러스 멤버십</span></span>
+</div>
+<strong class="name_seller">[스마트스토어] 아이정</strong>
+<a href="https://inflow.pay.naver.com/rd?no=500108564&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F2107300097&vcode=e%2B92H7LuBBv%2FTHnRvLPlAemF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNoXuMnyuDt6kejmCV93vvUrxX%2FmIbTO%2FHop9nO5N7GFW" target="_blank" >
+현대 멀티탭 1구 2구 3구 4구 5구 6구 개별 스위치 멀티콘센트
+</a><!--N=a:odd.product-->
+</dt>
+<dd>선택1(필수): 07. 개별 과부하차단 / 선택2 (필수): 6구 3M
+(+10,900원)
+</dd>
+</dl>
+</div>                <div class="rebuy _repurchase2021110984832211">
+                        <a href="#" class="fold _click(nmp.front.order.order_status.repurchaseOpen(2021110984832211)) _stopDefault">재구매</a><!--N=a:odd.rebuy-->
+                </div>
+	</td>
+	<td class="money">
+		<em class="thm">1,984,500</em>원<br>
+			<span>(65개)</span>
+	</td>
+	<td class="seller bg_point" rowspan="1">
+		<div class="send">
+			<div class="sum"><em class="thm">2,500</em>원 <a href="#" target="_blank" class="btn_help _click(nmp.front.order.order_status.openDeliveryFee(2021110984832211)) _stopDefault"><span class="blind">배송비 상세내역</span></a><!--N=a:odd.deldetail--></div>
+			<div class="_layer_deliveryFee ly_type" style="max-width:200px;display:none;z-index: 100">
+				<div class="ly_cont">
+					
+				</div>
+				<a href="#" class="clse _click(nmp.layer.hide()) _stopDefault"><span class="blind">닫기</span></a>
+				<div class="edge_cen"></div>
+			</div>
+			<div class="store">
+				<div class="inner ">
+					<div class="txt_elp">
+						<p>
+									<a href="#" class="_click(nmp.front.order.layer.merchant.infoPopup(ijungmall,MP)) _stopDefault">아이정</a>
+                                <!--N=a:odd.seller-->
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tel">
+				<span>(070-7777-2560)</span>
+			</div>
+			<div class="btn">
+			<a href="#" class="seller_inquiry _click(nmp.front.order.order_status.userAction(SHOPPING_INQUIRY,ajax,/merchant/shoppingInquiry/2021110984832211)) _stopDefault"><span class="blind">문의하기</span></a>
+                                    <!--N=a:odd.inquiry-->
+						<a href="" class="talk_inquiry _click(nmp.front.order.order_status.order_detail.openTalkTalk(2021110932809401,500108564,2021110984832211)) _stopDefault"><span class="blind">톡톡 하기</span></a><!--N=a:odd.talktalk-->
+			</div>
+		</div>
+	</td>
+	<td class="bg_point state">
+		구매확정<br/>
+	</td>
+	<td class="bg_point btn">
+				<a href="#" class="review_write _click(nmp.front.order.order_status.userAction(REVIEW_WRITE,popup,https://shopping.naver.com/reviews/form?orderNo=2021110932809401&productOrderNos=2021110984832211&returnUrl=https://order.pay.naver.com/review/formCallback)) _stopDefault">
+					<span class="blind">리뷰쓰기</span>
+				</a>
+                <!--N=a:odd.review-->
+				<a href="#" class="deliver _click(nmp.front.order.order_status.userAction(DELIVERY_INQUIRY,popup,/o/orderStatus/deliveryTracking/2021110984832211/ORDER_DELIVERY/api)) _stopDefault">
+					<span class="blind">배송조회</span>
+				</a>
+                <!--N=a:odd.tracking-->
+	</td>
+	</tr>
+	<tr >
+	<td>
+		<span class="thm ordernum2">2021110984832201</span>
+	</td>
+	<td class="product">
+<div>
+<div class="thmb">
+<div class="img_center"><a href="https://inflow.pay.naver.com/rd?no=500070063&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F4701043982&vcode=Z3Imz1eo8HUqZkZcI0TFJOmF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNndKQoO%2B2Toc%2Fyps9oT2GGPS7uh%2FrQ3IYEVfLcAYD3c7" target="_blank" ><img src="https://order.pay.naver.com/proxy/phinf/shop1/20210302_203/1614643993850iyXpQ_JPEG/15779889577880537_527070725.jpg?type=m80" alt="오아 듀얼미스트 무선 가습기 OA-HM048"></a><!--N=a:odd.product--></div>
+</div>
+<dl><!-- NV_MID:82245564840 -->
+<dt>
+<div class="additional_status">
+<span class="ico_npmember type_npay small"><span class="blind">네이버플러스 멤버십</span></span>
+</div>
+<strong class="name_seller">[스마트스토어] 오아스토어</strong>
+<a href="https://inflow.pay.naver.com/rd?no=500070063&tr=ppc&pType=P&retUrl=https%3A%2F%2Fsmartstore.naver.com%2Fmain%2Fproducts%2F4701043982&vcode=Z3Imz1eo8HUqZkZcI0TFJOmF0g3tI732njFSPgWUWcSpFxsxHa1RcRwHVJhfAV0ov7ilUSoYDzaPwlp%2Fa%2BrUNndKQoO%2B2Toc%2Fyps9oT2GGPS7uh%2FrQ3IYEVfLcAYD3c7" target="_blank" >
+오아 듀얼미스트 무선 가습기 OA-HM048
+</a><!--N=a:odd.product-->
+</dt>
+<dd>옵션선택: 듀얼미스트 H0046
+</dd>
+</dl>
+</div>                <div class="rebuy _repurchase2021110984832201">
+                        <a href="#" class="fold _click(nmp.front.order.order_status.repurchaseOpen(2021110984832201)) _stopDefault">재구매</a><!--N=a:odd.rebuy-->
+                </div>
+	</td>
+	<td class="money">
+		<em class="thm">55,800</em>원<br>
+			<span>(1개)</span>
+	</td>
+	<td class="seller bg_point" rowspan="1">
+		<div class="send">
+			<div class="sum">무료 <a href="#" target="_blank" class="btn_help _click(nmp.front.order.order_status.openDeliveryFee(2021110984832201)) _stopDefault"><span class="blind">배송비 상세내역</span></a><!--N=a:odd.deldetail--></div>
+			<div class="_layer_deliveryFee ly_type" style="max-width:200px;display:none;z-index: 100">
+				<div class="ly_cont">
+					
+				</div>
+				<a href="#" class="clse _click(nmp.layer.hide()) _stopDefault"><span class="blind">닫기</span></a>
+				<div class="edge_cen"></div>
+			</div>
+			<div class="store">
+				<div class="inner ">
+					<div class="txt_elp">
+						<p>
+									<a href="#" class="_click(nmp.front.order.layer.merchant.infoPopup(k2ci,MP)) _stopDefault">오아스토어</a>
+                                <!--N=a:odd.seller-->
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tel">
+				<span>(1661-4555)</span>
+			</div>
+			<div class="btn">
+			<a href="#" class="seller_inquiry _click(nmp.front.order.order_status.userAction(SHOPPING_INQUIRY,ajax,/merchant/shoppingInquiry/2021110984832201)) _stopDefault"><span class="blind">문의하기</span></a>
+                                    <!--N=a:odd.inquiry-->
+						<a href="" class="talk_inquiry _click(nmp.front.order.order_status.order_detail.openTalkTalk(2021110932809401,500070063,2021110984832201)) _stopDefault"><span class="blind">톡톡 하기</span></a><!--N=a:odd.talktalk-->
+			</div>
+		</div>
+	</td>
+	<td class="bg_point state">
+		구매확정<br/>
+	</td>
+	<td class="bg_point btn">
+				<a href="#" class="review_write _click(nmp.front.order.order_status.userAction(REVIEW_WRITE,popup,https://shopping.naver.com/reviews/form?orderNo=2021110932809401&productOrderNos=2021110984832201&returnUrl=https://order.pay.naver.com/review/formCallback)) _stopDefault">
+					<span class="blind">리뷰쓰기</span>
+				</a>
+                <!--N=a:odd.review-->
+				<a href="#" class="deliver _click(nmp.front.order.order_status.userAction(DELIVERY_INQUIRY,popup,/o/orderStatus/deliveryTracking/2021110984832201/ORDER_DELIVERY/api)) _stopDefault">
+					<span class="blind">배송조회</span>
+				</a>
+                <!--N=a:odd.tracking-->
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<form class="_payForm" action="/orderStatus/2021110932809401/pay" method="post" >
+<input type="hidden" name="orderId" value="2021110932809401"/>
+
+
+	<div class="heading heading2 mgt6">
+		<h4>주문/결제 금액 정보</h4>
+		<div class="fr_section">
+		</div>
+	</div>
+
+	<table cellspacing="0" border="1" class="tb_list2">
+	<caption>결제금액정보</caption>
+	<colgroup>
+		<col>
+		<col width="297">
+	</colgroup>
+	<thead class="blind">
+	<tr>
+		<th scope="col">결제정보</th>
+		<th scope="col">최종 결제금액정보</th>
+	</tr>
+	</thead>
+	<tbody>
+
+	<tr class="first">
+		<td class="money">
+			<div class="l_none">
+				<dl class="first">
+					<dt>최초 주문금액</dt>
+					<dd>
+						<!-- 주문금액 -->
+						<ul class="price_list">
+							<li>
+								<strong>상품금액</strong>
+								<p><em class="thm">2,217,800</em>원</p>
+							</li>
+							<li>
+								<strong>배송비</strong>
+								<p>+<em class="thm">5,500</em>원</p>
+							</li>
+							<li>
+								<strong>쿠폰할인</strong>
+								<p>-<em class="thm">146,000</em>원</p>
+								<ul class="detail_price_list">
+									<li>
+										<strong>상품/스토어/주문 할인
+												<a href="#" class="btn_help _click(nmp.front.order.order_status.order_detail.pay.openDiscountOrder()) _stopDefault"><span class="blind">상품/주문할인 상세보기</span></a><!--N=a:odd.benefit-->
+										</strong>
+										<p>-<em class="thm">146,000</em>원</p>
+									</li>
+									<li>
+										<strong>배송비 할인</strong>
+										<p><em class="thm">0</em>원</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="end">
+					<dt>결제상세</dt>
+					<dd>
+						<!-- 주결제수단 정보 -->
+						<ul class="price_list">
+							<li>
+								<strong>신용카드</strong>
+								<p><em class="thm">2,077,300</em>원</p>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</td>
+		<!-- [D] 나중에 결제가 있는 경우 rowspan="4"으로 변경 부탁드립니다. -->
+		<td rowspan="4" class="amount bg_point">
+			<dl class="">
+				<dt class="blind">결제정보</dt>
+				<dd>
+					<ul>
+						<li class="final_payment_price">
+							<strong>주문금액</strong>
+							<p><em class="thm">2,077,300</em>원</p>
+						</li>
+						<li>
+							<strong>신용카드</strong>
+							<p><em class="thm">2,077,300</em>원</p>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+            <dl class="spot_benefit_pay benefit_fold_panel _toggleBenefit on">
+                <dt class="fold_heading">
+					<a href="#" class="_click(nmp.front.order.order_status.order_detail.pay.toggleBenefit()) _stopDefault">
+						<strong>포인트 혜택</strong>
+						<span class="p_color_green">최대 2,983원 적립</span>
+						<span class="sp_order toggle_arrow">적립자세히보기</span>
+					</a>
+				</dt>
+                <dd class="fold_body">
+                    <div class="fold_inner">
+                        <div class="saving_info">
+								<div class="saving_item">
+									<div class="benefit_summary">
+										<strong class="saving_title">구매적립<a href="#" class="sp_order ico_que _click(nmp.front.order.order_status.order_detail.openMileageBenefitLayer()) _stopDefault" title="?">도움말</a><!--N=a:odd.buybenefit--></strong>
+										<em class="summary_num">총 <span>1,323</span>원</em>
+									</div>
+									<ul class="inner_list">
+											<li>
+												<span class="benefit_name">기본적립</span>
+												<span class="benefit_sum"><span>1,323</span>원</span>
+											</li>
+									</ul>
+								</div>
+								<div class="saving_item">
+										<div class="benefit_summary">
+											<strong class="saving_title">리뷰적립<a href="#" class="sp_order ico_que _click(nmp.front.order.order_status.order_detail.openReviewMileageBenefitLayer()) _stopDefault" title="?">도움말</a><!--N=a:odd.reviewbenefit--></strong>
+											<em class="summary_num">최대 1,660</span>원</em>
+										</div>
+										<div class="desc_text">
+													<p class="desc_text">동일 상품의 상품리뷰/한달사용리뷰 적립은 각각 1회로 제한됩니다.</p>
+										</div>
+								</div>
+                        </div>
+                    </div>
+				</dd>
+            </dl>
+		</td>
+	</tr>
+	<tr>
+			<td class="money btm_line _primaryPayAdmission">
+<div>
+	<table cellspacing="0" border="1">
+	<caption>결제수단</caption>
+	<col width="22%"><col><col width="9%">
+		<tr>
+			
+			<th scope="row">신용카드</th>
+				<td class="">국민
+					(4265-****-****-****) -
+					일시불
+						<br><span class="period">(<em>2021.11.09 15:48</em>)</span>
+				</td>
+		
+		</tr>
+	</table>
+		<ul class="card_interest_list">
+			<li class="card_interest_item">법인(개인사업자 법인 포함)카드는 할부/무이자 혜택 적용 불가</li>
+			<li class="card_interest_item">카드에 BC 마크가 없는 경우 무이자 할부 적용 불가</li>
+			<li class="card_interest_item">무이자 적용 여부는 카드사로 문의하시면 정확하게 확인할 수 있습니다.</li>
+		</ul>
+</div>
+			</td>
+	</tr>
+	</tbody>
+	</table>
+
+</form>
+
+
+
+
+<form class="_deliveryForm" action="/orderStatus/2021110932809401/delivery" method="post" >
+<input type="hidden" name="orderId" value="2021110932809401"/>
+<div class="heading heading2 mgt6">
+	<h4 id="DELIVERY">배송지 정보</h4>
+	<div class="fr_section">
+	</div>
+</div>
+<div class="input_section2 _input_section">
+	<div class="inp_area _deliveryPlace">
+<table cellspacing="0" border="1" class="tb_input2">
+<caption>배송지 정보입력</caption>
+<col width="91"><col>
+<thead class="blind">
+<th scope="col">배송지 정보</th>
+<th scope="col">배송지 정보입력</th>
+</thead>
+<tbody>
+<tr class="gap">
+<th scope="row">수령인</th>
+<td>이승화</td>
+</tr>
+<tr>
+<th scope="row">연락처</th>
+<td>
+	<span class="tel">010-5137-5962</span>
+	<span></span>
+</td>
+</tr>
+<tr>
+<th scope="row">배송지</th>
+<td class="address">
+	02455<br>
+	서울특별시 동대문구 회기로 37 (청량리동, 한국국방연구원)<br>
+	한국국방연구원
+</td>
+</tr>
+
+	<tr class="gap3">
+	<th scope="row">배송메모</th>
+	<td></td>
+	</tr>
+
+</tbody>
+
+</table>	</div>
+	<div class="view_area pdb3">
+		<dl>
+		<dt>
+			<strong class="fl">주문자 정보</strong>
+			<a href="https://pay.naver.com/mypage/update" target="_blank" class="info_change fr "><span class="blind">회원정보변경</span></a><!--N=a:odd.changeinfo-->
+		</dt>
+		<dd class="pdb">
+			<strong>이승화</strong>
+			<p>
+				010-5**7-5**2 <br>
+			</p>
+			<a class="email _stopDefault">mm******@na***com</a>
+		</dd>
+		</dl>
+	</div>
+</div>
+</form>
+	<p class="notice_txt">오늘출발 상품은 판매자 상황에 따라 배송 일정이 변경될 수 있으며, 정확한 일정은 판매자에게 문의해주시기 바랍니다.</p>
+<div class="ly_type2 _layerNStamp" style="display:none;">
+	<div class="ly_cont">
+		<strong class="tit">N stamp 적립혜택</strong>
+		<table cellspacing="0" border="1">
+		<caption>포인트 적립혜택</caption>
+		<col><col width="38%">
+		<thead class="blind">
+		<tr>
+		<th scope="col">상품명</th>
+		<th scope="col">구매평갯수</th>
+		</tr>
+		</thead>
+		<tbody>
+				</tbody>
+		</table>
+	</div>
+	<a href="#" class="clse _click(nmp.front.order.layer.hide(nStamp)) _stopDefault"><span class="blind">닫기</span></a>
+</div>
+<div class="ly_type2 _layerNaverMileage" style="display:none;">
+	<div class="ly_cont  ly_cont_npay">
+					<dt>구매 적립 혜택</dt>
+			<dd>
+				<ul class="info_txt ly_cont_npay_list">
+					<li>상품별 주문금액기준 구매확정 시 즉시 적립됩니다.</li>
+					<li>쿠폰할인금액/배송비/추가구성상품가격 제외되며 1회 주문 기준 최대 10만원까지만 적립됩니다.<br>(단, 무통장입금은 최대 2만원까지 적립)</li>
+					<li>간편결제/일반결제에 따라 지급되는 적립혜택이 상이할 수 있습니다.</li>
+					<li>상품주문결제 금액에서 구매 적립과 리뷰 적립 포인트를 차감한 금액이 0원 미만 (마이너스 금액)일 경우 구매 적립과 리뷰 작성에 대한 포인트 적립이 제외됩니다.</li>
+					<li>예약/주문 시 노출되는 적립 금액은 적립 예상 금액으로 프로모션 내용에 따라 실제 적립되는 금액과 차이가 있을 수 있습니다.<br>(프로모션 상세 조건에 따라 적립)</li>
+					<li>예약은 이용완료 후 적립됩니다.</li>
+					<li>네이버주문은 음식 서빙 및 픽업이 완료된 이후 적립됩니다.</li>
+				</ul>
+				<table cellspacing="0" border="1">
+				<caption>포인트 적립혜택</caption>
+				<col><col width="38%">
+				<thead class="blind">
+				<tr>
+				<th scope="col">상품명</th>
+				<th scope="col">구매평갯수</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr class="first">
+					<td>옥스포드 포켓절취 스프링노트 좌철 합지 A4 B5 낱권</td>
+					<td class="bg_point"><strong>370</strong>원</td>
+					</tr>
+					<tr >
+					<td>현대 멀티탭 1구 2구 3구 4구 5구 6구 개별 스위치 멀티콘센트</td>
+					<td class="bg_point"><strong>655</strong>원</td>
+					</tr>
+					<tr >
+					<td>오아 듀얼미스트 무선 가습기 OA-HM048</td>
+					<td class="bg_point"><strong>298</strong>원</td>
+					</tr>
+				</tbody>
+				</table>
+			</dd>
+	</div>
+	<a href="#" class="clse _click(nmp.front.order.layer.hide(naverMileage)) _stopDefault"><span class="blind">닫기</span></a>
+</div>
+
+<div class="ly_type2 _layerEasyPayMileage" style="left:420px;top:24px;display: none;">
+	<dl class="ly_cont ly_cont_npay">
+	<dt><span class="sp_npay">네이버 페이</span> 간편결제 적립 혜택</dt>
+	<dd>
+		<p class="info_txt">네이버 페이 간편결제시 상품별 구매금액의 <strong>9,223,372,036,854,775,807~0%</strong>씩 적립됩니다.(배송비제외)<br>
+		적립금액은 할인쿠폰이 적용된 금액을 기준으로 적립되므로 쿠폰 사용여부에 따라 금액이 달라질수 있으며, 1회 주문시 최대 20,000원 까지 적립 가능합니다.</p>
+		<table cellspacing="0" border="1" style="width:345px">
+		<caption>포인트 적립혜택</caption>
+		<colgroup><col><col width="38%">
+		</colgroup><thead class="blind">
+		<tr>
+		<th scope="col">상품명</th>
+		<th scope="col">포인트</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+		</table>
+		<a href="http://event2.pay.naver.com/event/benefit/list#ORDER_BENEFIT" target="_blank" class="btn_more">자세히보기</a>
+	</dd>
+	</dl>
+	<a href="#" class="clse _click(nmp.front.order.layer.hide(easyPayMileage)) _stopDefault"><span class="blind">닫기</span></a>
+</div>
+
+<div class="layer_box _layerCardMileage" style="width:453px;top:19px;left:65px;display:none;">
+	<div class="layer_inner">
+		<h5 class="layer_title">혜택카드 적립</h5>
+		<div class="layer_content">
+			<ul class="list_dot">
+				<li class="item_dot">· 동일주문 내 모든 상품의 상태가 종료되면 구매확정 상품에 한해, 혜택카드 결제금액에 대한 혜택이 잔여한도 내에서 적립됩니다.</li>
+				<li class="item_dot">· 혜택카드 잔여한도는 전체한도에서 확정 및 예정 혜택을 제외한 금액입니다.</li>
+				<li class="item_dot">· 혜택 한도 소진 후 기존 주문에 대한 취소/환불 등의 사유로 한도 복구가 되더라도, 한도 소진 상태에서의 주문들에 대해서는 혜택이 소급적용 되지 않습니다.</li>
+			</ul>
+			<div class="area_link">
+				<a href="https://help.pay.naver.com/faq/alias/creditcardad01.help" class="link">혜택카드 FAQ</a>
+			</div>
+		</div>
+		<button class="layer_close _click(nmp.front.order.layer.hide(cardMileage)) _stopDefault"><span class="blind">팝업 닫기</span></button>
+	</div>
+</div>
+
+<div class="layer_box _layerReviewMileage" style="width:453px;left:0;top:0;display:none;">
+    <div class="layer_inner">
+        <h5 class="layer_title">리뷰 적립 혜택</h5>
+        <div class="layer_content">
+            <p class="desc_guide">•텍스트 리뷰와 포토/동영상 리뷰 적립 혜택은 중복으로 지급되지 않으며, 포토/동영상 리뷰 작성 포인트는 최초 작성 시 포토/동영상을 첨부할 경우에만 적립됩니다.</p>
+                <p class="desc_guide">•한달사용 리뷰 작성 추가 포인트는 구매확정 이후 30일까지 리뷰를 작성하고, 한달사용 리뷰를 추가로 작성할 때만 지급됩니다.</p>
+            <p class="desc_guide">•동일 상품(상품번호 기준)에 대한 리뷰 적립 혜택은 리뷰/한달사용 리뷰 각각 1회로 제한되며, 적립 후 30일 경과 시 리뷰 적립혜택을 다시 받을 수 있습니다.</p>
+            <p class="desc_guide">•상품 결제금액 기준 3,000원 미만인 경우 리뷰 작성에 대한 포인트 적립이 제외됩니다.</p>
+			<p class="desc_guide">•상품주문결제 금액에서 구매 적립과 리뷰 적립 포인트를 차감한 금액이 0원 미만(마이너스 금액)일 경우 구매 적립과 리뷰 작성에 대한 포인트 적립이 제외됩니다.</p>
+            <div class="benefit_table">
+				<table class="layer_table">
+					<colgroup>
+						<col>
+						<col width="219">
+					</colgroup>
+					<thead class="blind">
+					<tr>
+						<th scope="col">상품명</th>
+						<th scope="col">적립혜택</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>옥스포드 포켓절취 스프링노트 좌철 합지 A4 B5 낱권</td>
+						<td class="benefit">
+                            <div class="point_list">
+									<strong class="tit">리뷰 작성 시 포인트 안내</strong>
+                                    <span class="detail">텍스트 리뷰 <b class="pointcolor_npay">50원</b></span>
+                                	<span class="detail">포토/동영상 리뷰 <b class="pointcolor_npay">150원</b></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>현대 멀티탭 1구 2구 3구 4구 5구 6구 개별 스위치 멀티콘센트</td>
+						<td class="benefit">
+                            <div class="point_list">
+									<strong class="tit">리뷰 작성 시 포인트 안내</strong>
+                                    <span class="detail">텍스트 리뷰 <b class="pointcolor_npay">60원</b></span>
+                                	<span class="detail">포토/동영상 리뷰 <b class="pointcolor_npay">180원</b></span>
+                                	<strong class="tit">한달사용 리뷰 작성 시 추가 포인트 안내</strong>
+                                	<span class="detail">텍스트 리뷰 <b class="pointcolor_npay">10원</b></span>
+                                	<span class="detail">포토/동영상 리뷰 <b class="pointcolor_npay">30원</b></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>오아 듀얼미스트 무선 가습기 OA-HM048</td>
+						<td class="benefit">
+                            <div class="point_list">
+									<strong class="tit">리뷰 작성 시 포인트 안내</strong>
+                                    <span class="detail">텍스트 리뷰 <b class="pointcolor_npay">550원</b></span>
+                                	<span class="detail">포토/동영상 리뷰 <b class="pointcolor_npay">1,150원</b></span>
+                                	<strong class="tit">한달사용 리뷰 작성 시 추가 포인트 안내</strong>
+                                	<span class="detail">텍스트 리뷰 <b class="pointcolor_npay">50원</b></span>
+                                	<span class="detail">포토/동영상 리뷰 <b class="pointcolor_npay">150원</b></span>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+        </div>
+        <button class="layer_close _click(nmp.front.order.layer.hide(reviewMileage)) _stopDefault"><span class="blind">팝업 닫기</span></button>
+    </div>
+</div>
+<div class="ly_type2 _layerOrderDiscountCancel" style="display:;">
+	</div><div class="ly_type2 _layerDeliveryFeeAdd" style="display:none;">
+	</div><div class="ly_type2 _layerDiscountChange" style="display:none;">
+	<div class="ly_cont4">
+		</div>
+	<a href="#" class="clse _click(nmp.front.order.layer.hide(discountChange)) _stopDefault"><span class="blind">닫기</span></a>
+</div><div class="ly_type2 _layerReliefPhoneNumberGuide" style="left:0; top:30px;width:463px; display:none;">
+	<dl class="ly_cont5">
+	<dt>안심번호 서비스 이용 안내</dt>
+	<dd class="cnt6">
+		안심번호 서비스는 구매회원의 개인정보보호를 위해 상품 주문 시 입력한 배송지 정보의<br>
+		연락처가 택배사 측에 노출되지 않도록 일회용 안심번호를 발급해드리는 서비스입니다.
+	</dd>
+	<dd class="cnt5">			
+		<ol style="list-stylle:normal">
+		<li>1 . 개인정보인 연락처 정보 대신 일회용 안심번호가 사용됩니다. 택배사는 <br>&nbsp;&nbsp;&nbsp; 실제 연락처 정보를 알 수 없으며, 안심번호만으로 회원님께 연락 드립니다.</li>
+		<li>2 . 안심번호는 주문 완료 이후 결제내역&gt;쇼핑 내역&gt;주문상세정보&gt;배송지 정보 영역에서<br>&nbsp;&nbsp;&nbsp; 확인하실 수 있습니다.</li>
+		<li>3 . 구매확정, 환불완료 등 주문처리 종료 시 또는 주문일로부터 90일 후에<br>&nbsp;&nbsp;&nbsp; 안심번호는 자동으로 해지되며, 그 이후에 취소반품 등의 클레임 요청이 진행되는<br>&nbsp;&nbsp;&nbsp; 경우에는 회원님의 실제 연락처가 판매자에게 제공됩니다.</li>
+		<li>4 . e쿠폰 및 해외배송 상품에는 서비스가 적용되지 않습니다.</li>
+		<li>5 . 안심번호 사용 시, 판매자가 주문처리 과정에서 개인적으로 발송하는 SMS나<br>&nbsp;&nbsp;&nbsp; 택배사에서 발송하는 배송예정기간 등의 알림 SMS가 전달되지 않을 수 있습니다.</li>
+		<li>6 . 안심번호 발행을 위해 굿스플로와 세종텔레콤에 회원님의 연락처 정보가 제공됩니다.</li>
+		</ol>
+	</dd>
+	</dl>
+	<a href="#" class="clse _click(nmp.front.order.layer.hide(reliefPhoneNumberGuide)) _stopDefault"><span class="blind">닫기</span></a>
+</div>
+<div class="ly_type layer_freeorder _layer_preOrder" style="width: 226px; display: none">
+    <div class="ly_cont">
+        <dl class="txtcol">
+            <dt><strong>예약구매 상품안내</strong></dt>
+            <dd>예약구매 상품은 일정기간 동안 주문을 사전에 모집하고 주문기간이 종료된 후 예정된 일자에 일괄로 발송하는 형태의 사전예약 상품입니다.</dd>
+            <dd>
+                <ul>
+                    <li>예약구매 상품의 특성상 주문종료 후 실제 발송일까지 시간이 소요될 수 있습니다. 발송예정일을 확인한 후 주문을 진행하여 주시기 바랍니다. </li>
+                    <li>예약구매 상품의 경우 주문기간동안 <i class="pointcol3">최소 주문수량에 미달하는 경우 판매자에 의해 주문이 취소될 수 있습니다.</i></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <a href="#" class="clse _click(nmp.layer.hide()) _clse_tab _stopDefault"><span class="blind">닫기</span></a>
+    <div class="edge_cen"></div>
+</div><div class="layer_box _predict_status_layer" style="display: none; position:absolute; width:455px; z-index:150">
+	<div class="layer_inner">
+		<h5 class="layer_title">배송기간 <span class="status_location _predict_delivery_location">서울특별시 동대문구 회기로 37 (청량리동, 한국국방연구원)</span></h5>
+		<!-- Case: 배송시뮬레이터/ [D] ly_simulator 클래스 추가 -->
+		<div class="layer_content layer_simulator">
+			<div class="delivery_wrap">
+				<p class="status">
+					<strong class="status_title _predictionBest"></strong>
+					최근 6개월 배송 데이터 기준
+				</p>
+				<ul class="status_estimation _predictionList">
+				</ul>
+				<p class="delivery_simulator">
+					빅데이터 분석으로 예측한
+					<b class="title">배송시뮬레이터<span class="blind">beta</span></b>
+				</p>
+			</div>
+			<ul class="bullet_list">
+				<li><span class="bullet"></span>최근 6개월 간의 배송 데이터 분석으로 예측한 이 상품의 배송완료 예상률입니다.</li>
+				<li><span class="bullet"></span>스토어 및 택배사 사정에 따라 실제와 다를 수 있습니다.</li>
+			</ul>
+		</div>
+		<button class="layer_close _click(nmp.front.order.layer.hide(deliveryPredictionStatusLayer)) _stopDefault"><span class="blind">팝업 닫기</span></button>
+	</div>
+</div>
+
+
+<div class="section_bnr detail">
+	<div id="rolling2" class="bnr_npay _card_banner_rolling">
+		<ul>
+				<li>
+					<a href="https://event2.pay.naver.com/event/benefit/activeEventList" target="_new"><img src="https://phinf.pstatic.net/checkout/20190618_106/1560834592679V2rgE_JPEG/840X70.jpg" alt="배너" width="840" height="70"></a><!--N=a:odd.event-->
+				</li>
+		</ul>
+	</div>
+</div>
+	        	</div>
+	        </div>
+	    	<!-- //content -->
+    	</div>
+        <!-- t_sction -->
+    </div>
+    <!-- //container -->   
+
+    <!-- footer -->
+	<!-- footer -->
+	<div id="footer">
+		<div class="info_site">
+			<ul>
+                <li><a href="https://pay.naver.com/provision" target="_blank">네이버페이 이용약관</a><!--N=a:fot.agreement--></li>
+                <li><a href="https://pay.naver.com/provision?viewType=electronic" target="_blank">전자금융거래 이용약관</a><!--N=a:fot.ecagreemnet--></li>
+				<li><a href="https://pay.naver.com/provision?viewType=paylater" target="_blank">후불결제 이용약관</a><!--N=a:fot.paylater--></li>
+				<li><a href="https://pay.naver.com/provision?viewType=autopayment" target="_blank">정기결제 이용약관</a><!--N=a:fot.autopayment--></li>
+                <li><a href="https://pay.naver.com/policy/financial" target="_blank"><strong>개인정보처리방침</strong></a><!--N=a:fot.private--></li>
+                <li><a href="https://policy.naver.com/policy/youthpolicy.html" target="_blank">청소년보호정책</a><!--N=a:fot.youth--></li>
+                <li><a href="https://help.pay.naver.com" target="_blank">쇼핑&amp;페이 고객센터</a><!--N=a:fot.helpdesk--></li>
+				<li><a href="https://npayad.naver.com " target="_blank">네이버페이 광고&amp;포인트</a><!--N=a:fot.npayad--></li>
+			</ul>
+			<div class="s_center">
+				<dl>
+				<dt>고객센터 주소 </dt>
+				<dd>강원도 춘천시 퇴계로 89 강원전문건설회관</dd>
+				<dt>전화</dt>
+				<dd>1588-3819 (<a href="https://help.pay.naver.com/" target="_blank">전화전클릭</a><!--N=a:fot.beforecall-->)</dd>
+				<dd>1588-3816 (결제도용신고)</dd>
+				<dt>온라인 문의</dt>
+				<dd><a href="https://help.pay.naver.com/faq/alias/naver-gu.help">바로가기</a></dd>
+				</dl>
+			</div>
+		</div>
+		<p class="f_marketing">네이버파이낸셜㈜은 전자결제서비스제공자 및 통신판매중개자이며 통신판매의 당사자가 아닙니다. 상품, 상품정보 및 거래에 관한 의무와 책임은 판매자에게 있습니다.</p>
+		<address>
+			대표이사 : 최인혁
+			<span></span>
+			주소 : 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 13561
+			<span></span>
+			사업자등록번호 : 524-86-01528
+		</address>
+		<div class="f_cr">
+			<em>©</em>
+			<a target="_blank" href="https://www.naverfincorp.com/">NAVER FINANCIAL Corp.</a>
+		</div>
+	</div>    
+	<!-- //footer -->
+	
+    <!-- //footer --> 
+    </div>
+    
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/jindo.all.js?ts=1" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/nmp.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/nmp.base.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/nmp.variables.js?ts=1" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/nmp.utility.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/service/front/order/nmp/nmp.layer.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/nmp.event_delegator.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/service/front/order/nmp/nmp.window.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/DateCoreAPI_Lite.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Component.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.UIComponent.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.HTMLComponent.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Timer.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.WatchInput.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.DefaultTextValue.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.LayerManager.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.LayerPosition.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Effect.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.LayerEffect.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Transition.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Calendar.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.DatePicker.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.PeriodDisplay.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.DateRangePicker.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.WeekPicker.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.MonthPicker.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.MultiDatePicker.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Pagination.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.TabControl.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.LazyLoading.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.RolloverArea.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.RolloverClick.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.SelectBox.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.Rolling.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.CircularRolling.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.NumericStepper.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/jindo.FileUploader.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.Base.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.Grid.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.DataRequester.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.ExtendGrid.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.CategorySelectorBase.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.CategorySelectorForSelectBox.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.FormHelper.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.AffiliateLayerLoader.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/component/nmp.component.RollingList.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/static.pay/o/c/commonjs/static/js/common/lcslog-0.8.4.js" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/ui.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/formatter.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/popup.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/layer.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/layer/merchant.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/fieldMergeUtil.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/order_status.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/order_branch.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/order_status/order_detail.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/request.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/order_status/order_detail/pay.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript" src="//img.pay.naver.net/o/wstatic/js/service/front/order/order_status/order_detail/delivery.js?1638438877896" charset="utf-8"></script>
+<script type="text/javascript">
+   lcs_do();
+nmp.registerModule(nmp.front.order);
+nmp.registerModule(nmp.front.order.popup, { "urls" : 	{
+			"shop.addressBookMapPopup" : "http://smartstore.naver.com/main/products/seller/{=merchantNo}/map/address/{=addressId}",
+			"front.order.popup.addressBook" : "https://pay.naver.com/mypage/deliveryPlaceList",
+			"front.order.popup.addressBook.new" : "https://pay.naver.com/shipping/popup/list",
+			"benefit.front.popup.refundmentAccountBook" : "http://pay.naver.com/mypage/refundmentAccountList",
+			"shop.front.popup.subscribe" : "http://smartstore.naver.com/main/subscription/subscribe/seller/{=merchantNumber}?reload=false&ni={=naverId}",
+			"benefit.front.popup.shoppingInquiry" : "https://pay.naver.com/shoppingInquiry/inquiryPopup?orderNo={=orderId}&merchantNo={=merchantNo}",
+		"":""
+	}
+ } );
+nmp.registerModule(nmp.front.order.layer);
+nmp.registerModule(nmp.front.order.layer.merchant);
+nmp.registerModule(nmp.front.order.order_branch);
+nmp.registerModule(nmp.front.order.order_status, {
+"urls" : 	{
+			"mobile.user.front.host" : "m.pay.naver.com",
+			"user.front.host" : "pay.naver.com",
+			"hope.delivery.order.popup.url" : "http://shopping.naver.com/hope-delivery/orders/{=productOrderId}/products/{=productId}",
+			"shopping.cart.url" : "http://shopping.naver.com/cart",
+		"":""
+	}
+,
+"" : ""
+});
+nmp.registerModule(nmp.front.order.order_status.order_detail, {
+"bookingCommandHeadUrl" : "https://api.booking.naver.com/v3.1/custom/naver-pay/redirect/",
+"urls" : 	{
+			"biztalk.front.host" : "talk.naver.com",
+		"":""
+	}
+,
+"deliveryPredictions" : null,
+"" : ""
+});
+nmp.registerModule(nmp.front.order.order_status.order_detail.pay,{
+	"urls" : 	{
+			"paylater.home.url" : "https://new-m.pay.naver.com/paylater",
+		"":""
+	}
+
+});
+nmp.registerModule(nmp.layer);
+nmp.registerModule(nmp.front.order.order_status.order_detail.delivery, {
+	"nProductOrderSize":3,
+	"showEditOnReady":false,
+	"restrictedReliefNumberList":$A(["070","080","0130","0303","0502","0503","0504","0505","0506","0507","0508","050"]),
+	"":""
+});
+</script>
+<script type="text/javascript" language="JavaScript" src="https://ssl.pstatic.net/static.checkout/layout/202111111406/js/customer/layout.variable.real.js"></script>
+<script type="text/javascript" language="JavaScript" src="https://ssl.pstatic.net/static.checkout/layout/202111111406/js/customer/layout.gnb.js"></script>
+<script type="text/javascript" language="JavaScript" src="https://ssl.pstatic.net/static.checkout/layout/202111111406/js/customer/layout.lnb.js"></script>
+<script type="text/javascript" language="JavaScript" src="https://ssl.pstatic.net/static.checkout/layout/202111111406/js/customer/layout.snb.js"></script>
+<script type="text/javascript" language="JavaScript" src="https://ssl.pstatic.net/static.checkout/layout/202111111406/js/customer/checkout.nclktag.js"></script>
+</body>
+</html>
